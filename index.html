@@ -186,7 +186,6 @@ nav{
    con una línea gruesa de acento abajo, no un panel de vidrio esmerilado. */
 nav.scrolled{
   background:var(--dark);
-  box-shadow:0 3px 0 var(--accent);
 }
 nav.scrolled .nav-logo{color:var(--white)}
 nav.scrolled .nav-links a{color:rgba(255,253,247,.8)}
@@ -374,6 +373,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
   height:clamp(56px,8vw,84px);
 }
 .belt-svg{display:block;width:100%;height:100%}
+#hero .wave-divider{z-index:7}
 
 /* ══ NOSOTROS ══ */
 #nosotros{
@@ -918,7 +918,6 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 .card-item[data-s="out-l"]{transform:translateX(-135%) rotate(-20deg) scale(.82);opacity:0;z-index:6;pointer-events:none}
 .card-item[data-s="out-r"]{transform:translateX(135%) rotate(20deg) scale(.82);opacity:0;z-index:6;pointer-events:none}
 .no-tr{transition:none!important}
-.card-label{font-family:var(--font-serif);font-style:normal;font-weight:700;font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.03em}
 .card-pips{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;pointer-events:none}
 /* Pips de confetti: cada punto en un color distinto de la paleta */
 .cp{display:block;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .3s,width .3s,border-radius .3s}
@@ -2045,21 +2044,11 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
       <!-- Card Carousel (imagen que se scrollea/toca) -->
       <div>
         <div class="card-carousel-wrap" id="cardCarousel">
-          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')">
-            <span class="card-label">Fiesta temática Sesame Street</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')">
-            <span class="card-label">Letrero Yuppi Yeii</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')">
-            <span class="card-label">Piñata T-Rex</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')">
-            <span class="card-label">Muro de follaje y dulces</span>
-          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')">
-            <span class="card-label">Nuestra fachada</span>
-          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')">          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')">          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')">          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')">          </div>
+          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')">          </div>
           <div id="cardPips" class="card-pips"></div>
         </div>
         <p class="carousel-hint">Toca o haz clic para ver más →</p>
@@ -2458,6 +2447,19 @@ Estamos en Valle de las Alamedas, San Nicolás de los Garza, cerca de Plaza Sent
   <!-- Fondo de partículas (morphic) -->
   <div id="visita-morphic"></div>
 
+  <div class="jesus-note-wrap">
+    <div class="jesus-note">
+      <div class="jesus-note-head">
+        <img class="jesus-note-foto" src="https://korvel.com.mx/img/founder-jesus.webp" alt="Jesús, de Korvel" width="64" height="64" loading="lazy">
+        <span class="jesus-note-nombre">Jesús, de Korvel</span>
+      </div>
+      <p>Hola, soy Jesus, de Korvel. Esta demo la arme con las fotos que tienen en google maps, asi que seguro me faltaron cosas, como sus paquetes o algunas respuestas de aqui abajo. Lo que tengan a la mano me lo mandan y se lo acomodo para dejarla a su medida.</p>
+      <span class="jesus-note-tel">Tel: 81 2933 5144</span>
+      <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
+    </div>
+  </div>
+
+
   <div class="contacto-inner">
     <div>
       <!-- [EDITAR] Título CTA — "inolvidable" se circulará -->
@@ -2568,17 +2570,7 @@ Estamos en Valle de las Alamedas, San Nicolás de los Garza, cerca de Plaza Sent
       </div>
     </div>
   
-    <div class="jesus-note-wrap">
-      <div class="jesus-note">
-        <div class="jesus-note-head">
-          <img class="jesus-note-foto" src="https://korvel.com.mx/img/founder-jesus.webp" alt="Jesús, de Korvel" width="64" height="64" loading="lazy">
-          <span class="jesus-note-nombre">Jesús, de Korvel</span>
-        </div>
-        <p>Hola, soy Jesus, de Korvel. Esta demo la arme con las fotos que tienen en google maps, asi que seguro me faltaron cosas, como sus paquetes o algunas respuestas de aqui abajo. Lo que tengan a la mano me lo mandan y se lo acomodo para dejarla a su medida.</p>
-        <span class="jesus-note-tel">Tel: 81 2933 5144</span>
-        <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
-      </div>
-    </div>
+
   </div>
   <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
