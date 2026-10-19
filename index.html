@@ -817,8 +817,9 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
    se queda pegada al borde izquierdo del contenedor .faq-list (que sí
    está centrado en la página), y todo el bloque de preguntas se ve
    descentrado/chueco en pantallas anchas (regresión real, no cosmética). */
-.faq-list{display:flex;flex-direction:column;align-items:center;gap:14px}
-.faq-chat-item{position:relative}
+.faq-list{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:640px;margin:0 auto}
+.faq-chat-item{position:relative;max-width:100%}
+.faq-chat-item.open{align-self:stretch}
 /* Burbujas sticker: color sólido + borde blanco + sombra dura. Ciclan rosa,
    verde y los dos tonos de morado (con un repetido, ver abajo) para
    que el bloque tenga variedad sin salirse de la paleta de marca. */
@@ -867,12 +868,13 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
    una respuesta necesita más de 300px reales, sube este número; NO
    vuelvas a la técnica de grid-template-rows sin probarla a fondo. */
 .faq-chat-a-wrap{
-  max-height:0;overflow:hidden;
+  max-height:0;width:0;overflow:hidden;display:flex;justify-content:flex-end;
   transition:max-height .4s cubic-bezier(.16,1,.3,1);
 }
-.faq-chat-item.open .faq-chat-a-wrap{max-height:300px}
+.faq-chat-item.open .faq-chat-a-wrap{max-height:300px;width:100%}
+.faq-chat-a-inner{display:flex;justify-content:flex-end;width:100%}
 .faq-chat-a{
-  margin:10px 0 0 20px;max-width:min(80%,480px);
+  margin:10px 0 0;max-width:min(80%,480px);
   background:var(--white);color:rgba(59,30,140,.92);
   border-radius:18px;padding:14px 18px;
   font-size:14px;line-height:1.7;font-weight:500;
@@ -886,7 +888,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
   transition:opacity .3s ease .08s,transform .4s cubic-bezier(.34,1.56,.64,1) .08s;
 }
 .faq-chat-item.open .faq-chat-a{opacity:1;transform:translateY(0) scale(1)}
-@media(max-width:600px){.faq-chat-a{max-width:92%;margin-left:10px}}
+@media(max-width:600px){.faq-chat-a{max-width:92%}}
 
 /* ══ GALERÍA ══ */
 #galeria{background:var(--dark);padding:var(--pad);position:relative;overflow:hidden}
@@ -1555,6 +1557,14 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
   .jesus-note-foto{width:72px;height:72px}
   .jesus-note-firma{height:26px}
 }
+/* FIX FAQ centrado+derecha (override universal) */
+.faq-list{max-width:640px!important;margin:0 auto!important}
+.faq-chat-item{width:auto!important;max-width:100%!important;text-align:left!important}
+.faq-chat-item.open{align-self:stretch!important}
+.faq-chat-a-wrap{width:0!important;display:flex!important;justify-content:flex-end!important}
+.faq-chat-item.open .faq-chat-a-wrap{width:100%!important}
+.faq-chat-a-inner{display:flex!important;justify-content:flex-end!important;width:100%!important}
+.faq-chat-a{margin-left:0!important}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
