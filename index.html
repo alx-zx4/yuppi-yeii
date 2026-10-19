@@ -138,7 +138,7 @@ body{font-family:var(--font-sans);background:var(--cream);color:var(--dark);over
    isolation:isolate fuerza a que cada uno de estos bloques cree SU PROPIO
    stacking context en z-index:6, por encima de los fondos decorativos
    (canvas de shaders, scrims) que van en z-index:1-2. */
-.hero-inner,.hero-dots,.belt-wrap,
+.hero-inner,.belt-wrap,
 .nosotros-inner,.espacios-inner,.precios-inner,.faq-inner,.galeria-inner,
 .servicios-inner,.testimonios-inner,.ubicacion-inner,.contacto-inner,
 footer .ft-top,footer .ft-bottom{position:relative;z-index:6;isolation:isolate}
@@ -241,7 +241,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 
 /* ══ HERO ══ */
 #hero{
-  min-height:100svh;
+  height:100svh;
   background:var(--dark);
   display:flex;flex-direction:column;position:relative;overflow:hidden;
 }
@@ -371,6 +371,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 .belt-wrap{
   position:relative;z-index:6;overflow:hidden;
   height:clamp(56px,8vw,84px);
+  background:var(--dark);
 }
 .belt-svg{display:block;width:100%;height:100%}
 #hero .wave-divider{z-index:7}
@@ -1008,9 +1009,9 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 
 /* Número grande en la esquina — ahora sólido y "de rótulo", no fantasma */
 .servicio-num{
-  position:absolute;top:-8px;right:16px;z-index:2;pointer-events:none;
+  position:absolute;top:6px;right:16px;z-index:1;pointer-events:none;
   font-family:var(--font-serif);font-style:normal;font-weight:800;
-  font-size:58px;line-height:1;color:rgba(255,255,255,.3);
+  font-size:46px;line-height:1;color:rgba(255,255,255,.3);
   text-shadow:0 3px 0 rgba(43,24,84,.18);
 }
 
@@ -2457,19 +2458,6 @@ Estamos en Valle de las Alamedas, San Nicolás de los Garza, cerca de Plaza Sent
   <!-- Fondo de partículas (morphic) -->
   <div id="visita-morphic"></div>
 
-  <div class="jesus-note-wrap">
-    <div class="jesus-note">
-      <div class="jesus-note-head">
-        <img class="jesus-note-foto" src="https://korvel.com.mx/img/founder-jesus.webp" alt="Jesús, de Korvel" width="64" height="64" loading="lazy">
-        <span class="jesus-note-nombre">Jesús, de Korvel</span>
-      </div>
-      <p>Hola, soy Jesus, de Korvel. Esta demo la arme con las fotos que tienen en google maps, asi que seguro me faltaron cosas, como sus paquetes o algunas respuestas de aqui abajo. Lo que tengan a la mano me lo mandan y se lo acomodo para dejarla a su medida.</p>
-      <span class="jesus-note-tel">Tel: 81 2933 5144</span>
-      <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
-    </div>
-  </div>
-
-
   <div class="contacto-inner">
     <div>
       <!-- [EDITAR] Título CTA — "inolvidable" se circulará -->
@@ -2579,8 +2567,20 @@ Estamos en Valle de las Alamedas, San Nicolás de los Garza, cerca de Plaza Sent
         <p class="form-hint" id="invHint">Escribe el nombre y elige un color, la invitación se arma sola.</p>
       </div>
     </div>
-  
 
+
+  </div>
+
+  <div class="jesus-note-wrap">
+    <div class="jesus-note">
+      <div class="jesus-note-head">
+        <img class="jesus-note-foto" src="https://korvel.com.mx/img/founder-jesus.webp" alt="Jesús, de Korvel" width="64" height="64" loading="lazy">
+        <span class="jesus-note-nombre">Jesús, de Korvel</span>
+      </div>
+      <p>Hola, soy Jesus, de Korvel. Esta demo la arme con las fotos que tienen en google maps, asi que seguro me faltaron cosas, como sus paquetes o algunas respuestas de aqui abajo. Lo que tengan a la mano me lo mandan y se lo acomodo para dejarla a su medida.</p>
+      <span class="jesus-note-tel">Tel: 81 2933 5144</span>
+      <img class="jesus-note-firma" src="https://korvel.com.mx/img/firma-jesus.webp" alt="Firma de Jesús" width="150" height="56" loading="lazy">
+    </div>
   </div>
   <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
